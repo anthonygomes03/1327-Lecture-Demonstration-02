@@ -36,3 +36,31 @@ print(f"The number is {number:05}")
 name = "Anthony"
 print(f"Hello, {name:>10}.")
 # :>10 puts ten spaces between the comma and the name
+
+name = "Anthony"
+age = 22
+salary = 67293.21
+is_employed = True
+
+print(type(name))
+print(type(age))
+print(type(salary))
+print(type(is_employed))
+# This checks to see what type of variable it is 
+
+age = 25
+current_salary = 67293.21
+
+age_and_salary = age + current_salary
+
+months_old = "11"
+years_old = 25
+
+age = (float(years_old)) + (float(months_old) / 12)
+print(f"Age as a float:, {age:.2f}")
+#"float" is applied to months old because we put 11 in "" so it is currently a string which is text to python. Normally you would put 11 in "" but we did
+# this to show you how to convert a string to a float which is a number with decimals and even exponents. Applying float to years old is redundant because
+# 25 is already an integer so it is compatible with float already
+
+age = int(age)
+print("Age as an int:", age)
