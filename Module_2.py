@@ -57,10 +57,15 @@ months_old = "11"
 years_old = 25
 
 age = (float(years_old)) + (float(months_old) / 12)
-print(f"Age as a float:, {age:.2f}")
+print("Age as a float:", age)
 #"float" is applied to months old because we put 11 in "" so it is currently a string which is text to python. Normally you would put 11 in "" but we did
 # this to show you how to convert a string to a float which is a number with decimals and even exponents. Applying float to years old is redundant because
 # 25 is already an integer so it is compatible with float already
 
 age = int(age)
 print("Age as an int:", age)
+
+print("Age:", age)
+age += 3
+
+print("Age:", age)
