@@ -71,6 +71,12 @@ age += 3
 
 print("Age:", age)
 
+# A list of mixed data values:
+employee_data = ["A123", 55024.23, 595, True]
+
+# A list of lists:
+list_of_lists = [["A", "B", "C"], [1, "X", True], [False, 12, 5.5]]
+
 # A list of integers:
 daily_step_count = [10343, 9385, 7029, 10931, 5921, 5921]
 # List indexes start at 0 not 1. so the [2] is actually 7029 which is the third one on the list normally, but the second one in python starting from 0
@@ -162,8 +168,176 @@ list_of_numbers = [1, 2, 3]
 tuple_of_numbers = tuple(list_of_numbers)
 print(tuple_of_numbers)
 
-# A list of mixed data values:
-employee_data = ["A123", 55024.23, 595, True]
+# Here are some examples of Dictionaries in action:
+fruit_inventory = {'apples': 23, 'oranges': 10, 'bananas': 59, 'pears': 29}
 
-# A list of lists:
-list_of_lists = [["A", "B", "C"], [1, "X", True], [False, 12, 5.5]]
+value = fruit_inventory['oranges']
+print(value)
+
+fruit_inventory['oranges'] = 25
+print(fruit_inventory['oranges'])
+
+fruit_inventory['plums'] = 100
+print(fruit_inventory)
+
+# The keys() method returns a view list object of the keys in the dictionary
+car = {
+    "brand": "Ford",
+    "model": "Mustang",
+    "year" : "1964"
+}
+
+x = car.keys()
+car["color"] = "white"
+print(x)
+
+# The values() method returns a view list object of the values in the dictionary
+car = {
+    "brand": "Ford",
+    "model": "Mustang",
+    "year" : "1964"
+}
+
+x = car.values()
+car["year"] = 2018
+print(x)
+
+# The items() method returns a view list containing Tuples of the key-value pairs in the dictionary
+car = {
+    "brand": "Ford",
+    "model": "Mustang",
+    "year" : "1964"
+}
+
+x = car.items()
+car["year"] = 2018
+print(x)
+
+# The get() method returns the value of the key arguement, or the specified default value.
+fruit_inventory = {'apples': 23, 'oranges': 10, 'bananas': 59, 'pears': 29}
+
+print (fruit_inventory.get('apples'))
+
+print(fruit_inventory.get('plums', 'fruit is not currently in the dictionary'))
+
+#The pop() method returns the value of the key argument and removes it from the dictionary
+fruit_inventory = {
+    'apples': 23, 
+    'oranges': 10, 
+    'bananas': 59, 
+    'pears': 29
+}
+
+fruit_inventory.pop('oranges')
+
+print(fruit_inventory)
+
+#The clear() method removes all key-value pairs from the dictionary.
+fruit_inventory = {
+    'apples': 23, 
+    'oranges': 10, 
+    'bananas': 59, 
+    'pears': 29
+}
+
+fruit_inventory.clear()
+
+print(fruit_inventory)
+
+# Two sets are created here, primes containing the values shown, and fives, an empty set.
+primes = {2, 3, 5, 7, 11, 13, 17, 19, 23}
+fives = set()
+
+#The add() method adds an element to the set.
+primes = {2, 3, 5, 7, 11, 13, 17, 19, 23}
+fives = set()
+
+primes.add(29)
+fives.add(5)
+
+print(primes)
+
+print(fives)
+
+#The remove() method removes an element from the set. If the element does not exist, an exception will occur.
+primes = {2, 3, 5, 7, 11, 13, 17, 19, 23}
+
+primes.remove(3)
+
+print(primes)
+
+#The discard() method removes an element from the set. If the element does not exist, the statement is ignored.
+primes = {2, 3, 5, 7, 11, 13, 17, 19, 23}
+
+primes.discard(3)
+
+print(primes)
+
+# no exception occurs
+primes.discard(22)
+
+#The union() method returns a new set containing all unique elements in the set object as well as the argument.
+primes = {2, 3, 5, 7, 11, 13, 17, 19, 23}
+fives = {5, 10, 15, 20, 25, 30, 35}
+
+union = primes.union(fives)
+
+print(union)
+
+#The difference() method returns a new set containing all elements in the set object that are different from those elements in the argument.
+primes = {2, 3, 5, 7, 11, 13, 17, 19, 23}
+fives = {5, 10, 15, 20, 25, 30, 35}
+
+difference = primes.difference(fives)
+
+print(difference)
+
+difference = fives.difference(primes)
+
+print(difference)
+
+#The intersection() method returns a new set containing all elements common to both the set object and the argument.
+primes = {2, 3, 5, 7, 11, 13, 17, 19, 23}
+fives = {5, 10, 15, 20, 25, 30, 35}
+
+intersect = primes.intersection(fives)
+
+print(intersect)
+
+# List, Tuple, and Strings are ordered collections. String and Tuple types can be converted to a list by using the list() function.
+# Similarly, the tuple() function can be used to convert String and List types to a Tuple.
+
+# String
+message = "Hello World"
+
+# Tuple
+inventory_counts = (1, 5, 6, 43, 511)
+
+# List
+temperatures = [23, 27, 31, 20, 19]
+
+# Cast string to a list
+characters = list(message)
+
+# Cast tuple to a list
+inventory_counts = list(inventory_counts)
+
+# Cast a string to a tuple
+characters = tuple(message)
+
+# Cast a list to a tuple
+temperatures = tuple(temperatures)
+
+# Iterable types can also be converted to a set.
+# Because a set is a collection of unique elements, when casting to a set duplicate values will be omitted.
+temperatures = [21, 22, 22, 23, 24, 24]
+
+temperatures = set(temperatures)
+
+print(temperatures)
+
+message = "hello"
+
+message = set(message)
+
+print(message)
